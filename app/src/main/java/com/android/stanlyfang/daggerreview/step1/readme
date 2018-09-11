@@ -1,0 +1,11 @@
+dagger基础
+
+第一个例子为注入User对象
+ 1、定义User对象后，在User的constractor加入@inject
+ 2、创建component组件，写明要注入的目标类（MainActivity）,本类为接口，需在类上使用@component修饰
+ 3、在MainActivity中使用@inject修饰要注入的对象
+
+ =====================
+ 当无法在类的constractor上添加@inject修饰时，则需要用到@Module
+ @Module中可以使用@provide方法提供类的实例，在本例中使用TextView进行注入
+ 并在component类的头上添加依赖：@Component(modules = TextViewModule.class)
